@@ -15,16 +15,19 @@ pipeline{
         }
         stage('codetesting with akshat'){
             steps{
+                echo 'starting testing'
                 sh 'mvn test'
             }
         }
         stage('qa with akshat'){
             steps{
+                echo 'starting analysing'
                 sh 'mvn checkstyle:checkstyle'
             }
         }
         stage('package with akshat'){
             steps{
+                echo 'starting packaging'
                 sh 'mvn package'
             }
         }
